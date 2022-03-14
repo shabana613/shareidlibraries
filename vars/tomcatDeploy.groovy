@@ -7,4 +7,4 @@ def call(ips,user,credId){
       sh "ssh ${user}@${it} /opt/tomcat8/bin/startup.sh"
     }
   } 
-}
+//}
