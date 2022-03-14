@@ -1,10 +1,11 @@
 def call(ips,user,credId){
   sshagent([credId]) {
-    ips.each {
-      echo "deploying on ${ips}"
-      sh "scp -o StrictHostKeyChecking=no target/*.war ${user}@${it}:/opt/tomcat8/webapps/app.war"
-      sh "ssh ${user}@${it} /opt/tomcat8/bin/shutdown.sh"
-      sh "ssh ${user}@${it} /opt/tomcat8/bin/startup.sh"
+ //   ips.each {
+ //     echo "deploying on ${ips}"
+ //     sh "scp -o StrictHostKeyChecking=no target/*.war ${user}@${it}:/opt/tomcat8/webapps/app.war"
+      sh "scp -o StrictHostKeyChecking=no target/*.war ${user}@${ips}:/opt/tomcat8/webapps/app.war"
+      sh "ssh ${user}@${ips} /opt/tomcat8/bin/shutdown.sh"
+      sh "ssh ${user}@${ips} /opt/tomcat8/bin/startup.sh"
     }
    }
 }
