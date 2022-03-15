@@ -5,5 +5,5 @@ def sub(x,y){
   print "subtraction of $(x) and $(y) is $(x-y)"
 }
 def mul(x,y){
-  pront "multplication of $(x) and $(y) is $(x*y)"
+  print "multplication of $(x) and $(y) is $(x*y)"
 }
